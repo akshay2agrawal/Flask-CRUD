@@ -1,0 +1,42 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1">
+
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td><a href="/delete/{{book.id}}">delete</a> </td>
+            <td><a href="/update/{{book.id}}">update</a> </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<form method="POST" action="/">
+    <input type="text" placeholder="book name"  name="title"><br>
+
+    <input type="text" placeholder="author" name="author"><br>
+    <input type="submit" value="Add">
+</form>
+</body>
+</html>
